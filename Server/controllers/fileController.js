@@ -1,5 +1,5 @@
 import cloudinary from "../config/cloudinary.js";
-import File from "../models/File.js";
+import File from "../models/file.js";
 import sendEmail from "../utils/sendEmail.js";
 
 export const uploadFile = async (req, res) => {
