@@ -1,16 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Upload from "./pages/Upload";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      
-    </>
-  )
+    <BrowserRouter>
+      <nav style={{ display:"flex", gap:12 }}>
+        <Link to="/">Register</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/upload">Upload</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Register/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/upload" element={<Upload/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
