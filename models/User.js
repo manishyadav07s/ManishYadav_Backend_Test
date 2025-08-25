@@ -1,10 +1,10 @@
-import express from 'express';
+import mongoose from 'mongoose';
 
-const userSchema = new express.Schema({
-    name:{type:String},
-    email:{type: String, unique:true},
-    password:{type:String}
-})
+const userSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, unique: true, required: true },
+    password: { type: String, required: true }
+});
 
-const User = express.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 export default User;
