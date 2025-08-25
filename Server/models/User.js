@@ -6,4 +6,5 @@ const userSchema = new express.Schema({
     password:{type:String}
 })
 
-export default express.model("User", userSchema);
+const User = express.model("User", userSchema);
+export default User;
